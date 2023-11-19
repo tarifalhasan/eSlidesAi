@@ -18,9 +18,11 @@ module.exports = {
     extend: {
       backgroundImage: {
         hero: "radial-gradient(289.46% 83.06% at 49.97% 48.3%, #FFF 0%, rgba(231, 238, 251, 0.84) 48.28%, rgba(244, 247, 251, 0.00) 100%)",
+        gradient1:
+          "linear-gradient(270deg, rgba(236, 240, 249, 0.80) 0.17%, rgba(240, 243, 250, 0.73) 48.25%, rgba(244, 247, 251, 0.00) 99.77%)",
       },
       colors: {
-        border: "hsl(var(--border))",
+        border: "var(--border)",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
@@ -30,8 +32,8 @@ module.exports = {
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
+          DEFAULT: "#667599",
+          foreground: "#fff",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
@@ -55,6 +57,9 @@ module.exports = {
         },
         "dark-gray-25": "#E6E8EE",
         "dark-999": "#020817",
+        gray: "#64748B",
+        "gray-1000": "#001853",
+        "gray-550": "#4B5563",
       },
       borderRadius: {
         lg: "var(--radius)",

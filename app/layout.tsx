@@ -1,3 +1,4 @@
+import { Toaster } from "@/components/ui/toaster";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Anek_Bangla, Inter } from "next/font/google";
@@ -24,7 +25,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn(inter.variable, anek_bangla.variable)}>
-        {children}
+        <main>{children}</main>
+        <Toaster />
       </body>
     </html>
   );
