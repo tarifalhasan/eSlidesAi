@@ -1,6 +1,7 @@
 import lines from "@/public/icons/lines.svg";
 import { ArrowUp, Plus } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { ReactNode } from "react";
 import { FaQuestion } from "react-icons/fa";
 import { Button } from "../ui/button";
@@ -31,7 +32,7 @@ const HowItWork = () => {
   ];
 
   return (
-    <div className=" py-5 space-y-8 xl:py-8 container">
+    <div id="how_it_work" className=" py-5 space-y-8 xl:py-8 container">
       <div>
         <h2 className=" text-3xl md:text-4xl lg:text-6xl font-semibold">
           How it Works
@@ -64,7 +65,11 @@ const HowItWork = () => {
         ))}
       </div>
       <div className=" py-10 xl:py-14 flex justify-center">
-        <Button>Generate a presentation now!</Button>
+        <Button>
+          <Link href={"/answer-some-questions"}>
+            Generate a presentation now!
+          </Link>
+        </Button>
       </div>
     </div>
   );

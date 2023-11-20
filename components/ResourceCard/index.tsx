@@ -1,36 +1,34 @@
 import Image from "next/image";
+import { FC } from "react";
 
-const ResourcesCard = () => {
+import { FaTrashCan } from "react-icons/fa6";
+import {
+  IoChevronDownCircleOutline,
+  IoChevronUpCircleOutline,
+} from "react-icons/io5";
+
+interface IResourcesCard {
+  category: string;
+  reference: string;
+  index: number;
+}
+
+const ResourcesCard: FC<IResourcesCard> = ({ category, reference, index }) => {
   return (
     <div>
       <h3 className="text-center text-xl font-normal  text-dark-999">
-        Resource 1
+        Resource {index}
       </h3>
       <div className="border border-border bg-white rounded-[6px]">
-        <div className="flex  gap-3 items-center justify-end p-3">
+        <div className="flex  gap-2 items-center justify-end p-3">
           <button>
-            <Image
-              src={"/icons/Slide Up.svg"}
-              alt="slide-up"
-              width={12}
-              height={12}
-            />
+            <IoChevronDownCircleOutline size={25} />
           </button>
           <button>
-            <Image
-              src={"/icons/Slide Down.svg"}
-              alt="slide-up"
-              width={12}
-              height={12}
-            />
+            <IoChevronUpCircleOutline size={25} />
           </button>
           <button>
-            <Image
-              src={"/icons/Delete Trashsvg"}
-              alt="slide-up"
-              width={12}
-              height={12}
-            />
+            <FaTrashCan size={21} />
           </button>
         </div>
         <div className=" px-5  py-5">
@@ -39,20 +37,46 @@ const ResourcesCard = () => {
               <span className="text-sm opacity-60 font-normal text-black block">
                 Category:
               </span>
-              <span className="text-sm font-normal text-black block">PDF</span>
+              <span className="text-sm font-normal text-black block">
+                {category}
+              </span>
             </li>
             <li className="flex items-center justify-between">
               <span className="text-sm opacity-60 font-normal text-black block">
                 Reference:
               </span>
               <span className="text-sm font-normal text-black block">
-                Math Textbook
+                {reference}
               </span>
             </li>
           </ul>
         </div>
         <div className="flex items-center justify-end pt-4 pb-2  px-2">
-          <Image src={"/icons/PDF.svg"} width={36} height={36} alt="pdf" />
+          {category.toLocaleLowerCase() === "pdf" ? (
+            <Image src={"/icons/PDF.svg"} width={36} height={36} alt="pdf" />
+          ) : category.toLocaleLowerCase() === "video" ? (
+            <Image
+              src={"/icons/Video.svg"}
+              width={38}
+              height={38}
+              alt="video"
+            />
+          ) : category.toLocaleLowerCase().replace(/\s+/g, "") ===
+            "textfile" ? (
+            <Image
+              src={"/icons/Edit Text File.svg"}
+              width={38}
+              height={38}
+              alt="Edit Text File"
+            />
+          ) : category.toLocaleLowerCase() === "url" ? (
+            <Image
+              src={"/icons/Website.svg"}
+              width={38}
+              height={38}
+              alt="Edit Text File"
+            />
+          ) : null}
         </div>
       </div>
     </div>

@@ -18,11 +18,8 @@ const UnAuthenticHeader = () => {
             height={38}
           />
         </Link>
-        <Button
-          onClick={() => router.push("/answer-some-questions")}
-          className=" active:opacity-60 hover:opacity-60 text-sm xl:text-xl xl:font-semibold h-[37px]"
-        >
-          Generate your slides
+        <Button className=" active:opacity-60 hover:opacity-60 text-sm xl:text-base xl:font-semibold h-[37px]">
+          <Link href={"/answer-some-questions"}> Generate your slides</Link>
         </Button>
       </div>
     </div>

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Button } from "../ui/button";
 
 const Hero = () => {
@@ -13,7 +14,9 @@ const Hero = () => {
         </p>
         <div className=" grid grid-cols-2 py-3  gap-4 max-w-[calc(203px*2)] ">
           <Button>Get Started Now</Button>
-          <Button variant={"outline"}>How to Use</Button>
+          <Button variant={"outline"}>
+            <Link href={"#how_it_work"}> How to Use</Link>
+          </Button>
         </div>
       </div>
     </div>

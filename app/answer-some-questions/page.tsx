@@ -72,8 +72,8 @@ const AnswerSomeQuestion = () => {
   }
   return (
     <div className="space-y-5 h-full bg-gradient1 bg-cover w-full  bg-no-repeat xl:space-y-10 min-h-screen flex flex-col">
-      <AuthenticHeader />
-      <div className=" container max-w-[525px]">
+      <AuthenticHeader show_tabs_link={true} />
+      <div className=" container pt-[110px] max-w-[525px]">
         <div className="space-y-3">
           <p className="text-base  text-center opacity-30">Step 1/2</p>
           <h3 className="heading1 text-center">Answer some questions</h3>

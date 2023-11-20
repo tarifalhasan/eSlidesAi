@@ -42,10 +42,20 @@ const GenaratePresention1: FC<IGenaratePresention1> = ({
 
     return () => clearInterval(timer);
   }, []);
+
+  // Watch for changes in isLoading state
+  useEffect(() => {
+    if (!isLoading) {
+      // Update the URL when isLoading becomes false
+      setPresentationUrl("www.example.com/presentation-success");
+      // Example: Replace the URL using Next.js router
+      router.replace("/add-your-resources?success");
+    }
+  }, [isLoading, router]);
   return (
     <Dialog open={open} onOpenChange={handleGenaratePresention}>
       {/* <DialogTrigger>Open</DialogTrigger> */}
-      <DialogContent className="h-[360px] flex justify-center items-center max-w-[879px]">
+      <DialogContent className=" flex py-10 justify-center items-center max-w-[879px]">
         <div className="flex w-full items-center flex-col space-y-5">
           <Image
             src={"/icons/logo.png"}
